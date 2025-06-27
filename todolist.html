@@ -1,0 +1,41 @@
+<body  style="text-align: center; background-color: bisque;">
+
+<h1 style="text-align: center; background-color: bisque;">To Do List</h1>
+<h2>Update To Do Activities</h2>
+<input id="input" onclick="">
+<button onclick="update()">add</button>
+<ul id="list-container">
+    <li>Everyday Activity
+        <button onclick="deleteItem(event)">delete</button>
+    </li>
+
+         <li>wakeup by 5.30Am.
+        <button onclick="deleteItem(event)">delete</button>
+    </li>
+   
+     <li>workout, Meditation
+        <button onclick="deleteItem(event)">delete</button>
+    </li>
+     <li>Diet, work
+        <button onclick="deleteItem(event)">delete</button>
+    </li>
+
+
+</ul>
+</body>
+<script>
+    var ul = document.getElementById("list-container")
+    var input = document.getElementById("input")
+    function update ()
+    {
+            var listitem = document.createElement("li")
+            listitem.innerHTML = input.value + "<button onclick='deleteItem(event)'>delete</button>"
+            ul.append(listitem)
+
+    }
+    function deleteItem(event)
+    {
+        event.target.parentElement.remove()
+    }
+
+</script>
